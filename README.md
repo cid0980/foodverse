@@ -1,19 +1,24 @@
 # Food Delivery App (Node/Express + MongoDB + React)
 
-## One-Command Start
+## Quick Start (Linux/macOS)
 
 ```bash
 ./start.sh
 ```
 
-This will:
-- Ensure `backend/.env` exists (copies from `.env.example` if missing).
-- Install backend/frontend dependencies if needed.
+## Quick Start (Windows PowerShell)
+
+```powershell
+./start.ps1
+```
+
+Both scripts will:
+- Create `backend/.env` from `.env.example` if missing.
+- Install backend/frontend dependencies if missing.
 - Start backend (port 5000) and frontend (port 5173).
-- Attempt to start MongoDB via `systemctl` on Ubuntu if `mongod` is installed.
 - Use a Vite proxy so the frontend calls `/api` without CORS issues.
 
-## Quick Setup
+## First-time Setup (all OS)
 
 1. `cd backend`
 2. `cp .env.example .env`
@@ -58,6 +63,10 @@ JWT_SECRET=change_me
 - `GET /api/orders/available` (delivery_partner/admin)
 - `POST /api/orders/:id/accept` (delivery_partner/admin)
 - `PATCH /api/orders/:id/status` (vendor/delivery_partner/admin)
+
+## Git Notes
+- `.env` files are ignored by `.gitignore`. Commit only `.env.example`.
+- `node_modules` is ignored.
 
 ## Architecture
 
